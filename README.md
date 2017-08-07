@@ -26,3 +26,8 @@
 		private SAP sap;
 	   ```
    * `DirectedCycle` object is created to ensure that digraph is single rooted and has no cycle in the graph. 
+* __Version 2__: 
+	* use private type `stepLockBFS` inside `SAP` class: whenever steps from a vertex is greater than best result so far, break the loop
+	* Avoid re-initialize array for all vertices when number of vertices are huge. 
+		1)  use ArrayList  to record index of vertex which was visited during BFS. 
+		2)  Only reset those vertices' status in the array at end of each BFS search.
